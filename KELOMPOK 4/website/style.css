@@ -1,0 +1,538 @@
+/*----------------- Website Theme --------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*----------------- Website Theme --------------------*/
+
+:root {
+    --hue-1: 257;
+    --hue-2: 47;
+    --main-color-1: hsl(var(--hue-1), 100%, 60%);
+    --main-color-dark-1: hsl(var(--hue-1), 69%, 50%);
+    --main-color-2: hsl(var(--hue-2), 100%, 61%);
+    --main-color-dark-2: hsl(var(--hue-1), 82%, 55%);
+    --section-padding: 7rem;
+}
+
+body {
+    --bg-color: hsl(var(--hue-1), 100%, 97%);
+    --bg-color-1: hsl(var(--hue-1), 100%, 97%);
+    --bg-color-2: #fff;
+    --bg-color-3: hsl(var(--hue-1), 100%, 98%);
+    --bg-color-transparent: rgba(255, 255, 255, 0.6);
+    --heading-color: hsl(var(--hue-1), 61%, 24%);
+    --text-color: hsl(var(--hue-1), 17%, 63%);
+}
+
+body.dark {
+    --bg-color: hsl(var(--hue-1), 19%, 15%);
+    --bg-color-1: hsl(var(--hue-1), 21%, 11%);
+    --bg-color-2: hsl(var(--hue-1), 23%, 19%);
+    --bg-color-3: hsl(var(--hue-1), 23%, 24%);
+    --bg-color-transparent: hsla(var(--hue-1), 23%, 19%, 0.6);
+    --heading-color: hsl(var(--hue-1), 100%, 95%);
+}
+
+body.dark .toggle-btn {
+    background-color: var(--bg-color-3);
+}
+
+body.dark .toggle-btn:hover {
+    background-color: brightness(110%);
+}
+
+body.dark .nav-link:hover::after,
+body.dark .nav.link.active::after {
+    opacity: 0.6;
+}
+
+body.dark .form-control:hover {
+    filter: brightness(110%);
+}
+
+
+/*----------------- General styles --------------------*/
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: var(--bg-color);
+    font-family: "Poppins", sans-serif;
+}
+
+::selection {
+    background-color: hsla(var(--hue-1), 100%, 60%, 0.9);
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/*----------------- Reusable CSS Code --------------------*/
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 75rem;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+}
+
+.logo {
+    margin-right: 1.5rem;
+    font-family: "Abril Fatface", cursive;
+    font-size: 1.5rem;
+    color: var(--heading-color);
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.logo span {
+    color: var(--main-color-1);
+}
+
+
+/*----------------- Navbar styles --------------------*/
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    transition: 0.3s;
+}
+
+header.scrolled {
+    background-color: var(--bg-color-transparent);
+    box-shadow: 0 5px 20px 0.1px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+}
+
+nav.container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header .logo {
+    height: 120px;
+    line-height: 120px;
+}
+
+header.scrolled .logo {
+    height: 80px;
+    line-height: 80px;
+}
+
+.link {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.link ul {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-link {
+    position: relative;
+    display: inline-block;
+    margin: 0 1rem;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    color: var(--text-color);
+    font-weight: 500;
+    opacity: 0.9;
+    transition: 0.3s;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--main-color-1);
+    bottom: 0;
+    left: -5px;
+    z-index: -1;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--heading-color);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    opacity: 0.2;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.9rem 1.75rem;
+    border-radius: 17px;
+    background-color: var(--main-color-1);
+    color: #fff;
+    font-size: 0.85rem;
+    letter-spacing: 0.4px;
+    text-transform: capitalize;
+    transition: 0.3s;
+}
+
+.toggle-btn {
+    color: var(--heading-color);
+    min-width: 40px;
+    height: 40px;
+    background-color: var(--bg-color-2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+    margin-right: 1rem;
+}
+
+.toggle-btn:hover {
+    filter: brightness(80%);
+}
+
+
+/*----------------- Showcase Area style --------------------*/
+
+.showcase-area {
+    padding: 120px 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.showcase-area .container {
+    display: grid;
+    grid-template-columns: 1fr 550px;
+    height: calc(100vh - 120px);
+    max-height: 600px;
+    align-items: center;
+}
+
+.sub-heading {
+    color: var(--heading-color);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    border-left: 3px solid var(--main-color-2);
+    padding: 0.13rem 0.75rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.heading {
+    color: var(--heading-color);
+    font-size: 3rem;
+    font-family: "Abril Fatface", cursive;
+    font-weight: 400;
+    line-height: 1.3;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid var(--main-color-2);
+}
+
+.animasi-ketikan {
+    animation: ketikan 5s steps(19) 1s infinite normal both, kedip 500ms steps(19) infinite normal;
+}
+
+@keyframes ketikan {
+    from {
+        width: 0;
+    }
+    to {
+        width: 10em;
+    }
+}
+
+@keyframes kedip {
+    from {
+        border-right-color: var(--main-color-2);
+    }
+    to {
+        border-right-color: transparent;
+    }
+}
+
+.heading2 {
+    color: var(--heading-color);
+    font-size: 3rem;
+    font-family: "Abril Fatface", cursive;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.text {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    margin: 2rem 0;
+    line-height: 2.3;
+}
+
+.showcase-area .sub-heading {
+    margin-bottom: 0.7rem;
+}
+
+.showcase-area .heading {
+    font-size: 3.5rem;
+}
+
+.showcase-area .text {
+    margin: 0.8rem 0;
+}
+
+.showcase-image {
+    position: relative;
+    width: 100%;
+}
+
+.showcase-image .card {
+    display: grid;
+    grid-template-rows: 200px 10px;
+    margin: 1px;
+    text-align: center;
+    transform: translateX(-10%);
+    background-color: var(--bg-color-2);
+    color: var(--heading-color);
+}
+
+.showcase-image .card-title {
+    border-bottom: 3px solid var(--bg-color);
+}
+
+.showcase-image #JAM {
+    position: absolute;
+    width: 100%;
+    bottom: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+}
+
+.showcase-image #TANGGAL {
+    position: absolute;
+    width: 100%;
+    bottom: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+}
+
+.showcase-image #lampu {
+    position: absolute;
+    width: 100%;
+    bottom: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+}
+
+
+/*----------------- About styles --------------------*/
+
+.section {
+    position: relative;
+    padding: var(--section-padding) 0;
+}
+
+.about .container {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+}
+
+.about.text {
+    margin: 3rem 0 4rem;
+}
+
+.about-image {
+    position: relative;
+    margin-top: -500px;
+    border-radius: 0 0 80px 80px;
+    left: -50px;
+}
+
+.about-image .logo {
+    position: absolute;
+    width: 80%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0 0 80px 80px;
+}
+
+
+/*--------------Jam Digital-----------------*/
+
+.clock {
+    color: var(--heading-color);
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+}
+
+.container .clock {
+    margin-bottom: 1rem;
+}
+
+.button-onoff {
+    position: relative;
+    left: -410px;
+    top: 50%;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 110px;
+    height: 60px;
+    margin: 0 10px;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.switch input {
+    display: none
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 50px;
+    width: 50px;
+    left: 5px;
+    bottom: 5px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50px;
+}
+
+input:checked+.slider {
+    background-color: var(--heading-color);
+}
+
+input:checked+.slider:before {
+    transform: translateX(50px);
+}
+
+.container .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 30px;
+    align-items: center;
+    grid-gap: 30px;
+    color: var(--heading-color);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.img {
+    object-fit: cover;
+}
+
+.grid>article {
+    border-radius: 40px 5px 40px 40px;
+    text-align: center;
+    background: var(--bg-color-2);
+    transition: transform;
+}
+
+.grid>article img {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 5px;
+}
+
+.konten {
+    cursor: progress;
+}
+
+.grid>article:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width:1000px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:800px) {
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+strong {
+    font-size: 20px;
+    color: var(--heading-color);
+    font-style: bold;
+}
+
+.row .container {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 550px;
+    height: calc(100vh - 120px);
+    max-height: 600px;
+}
+
+.result {
+    display: block;
+    grid-template-columns: 1fr 550px;
+    height: calc(150vh - 120px);
+    max-height: 600px;
+    color: var(--heading-color);
+}
+
+.input-group {
+    background: var(--bg-color-2);
+    border-radius: 20px;
+    padding: 3.5em 3rem;
+}
+
+.form-control {
+    display: inline-block;
+    padding: 0.9rem 1.5rem;
+    background: var(--bg-color-3);
+    border: 2px solid var(--bg-color-3);
+    border-radius: 17px;
+    border-bottom-right-radius: 17px;
+    color: var(--heading-color);
+}
+
+.form-control::placeholder {
+    color: var(--text-color);
+}

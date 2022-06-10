@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.rtl.min.css" integrity="sha384-dc2NSrAXbAkjrdm9IYrX10fQq9SDG6Vjz7nQVKdKcJl3pC+k37e7qJR5MVSCS+wR" crossorigin="anonymous" />
+    <title>Smart Light Control</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo"><span>Internet </span>Of <span>Things</span></a
+        >
+        <div class="link">
+          <ul>
+            <li>
+              <a href="#dashboard" class="nav-link">Dashboard</a>
+            </li>
+            <li>
+                <a href="#about" class="nav-link">About</a>
+            </li>
+            <li>
+                <a href="#weat" class="nav-link">Weather Check</a>
+            </li>
+            <li>
+                <a href="#pf" class="nav-link">Teams</a>
+            </li>
+            </ul>
+            <i class="uil uil-moon toggle-btn"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="showcase-area" id="dashboard">
+            <div class="container">
+                <div class="showcase-info">
+                    <!---------------- Jam ---------------->
+                    <div id="myclock" class="clock"></div>
+
+                    <!------------------- Sub heading ------------------->
+                    <h3 class="sub-heading">Cyber Physical System Laboratory</h3>
+                    <h1 class="heading animasi-ketikan">Smart Light Control</h1>
+                    <p class="text">Telkom University, Bandung</p>
+                </div>
+
+                <!----------------------- Card ------------------------>
+                <div class="showcase-image">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Waktu</h5>
+                                    <h1><span id="JAM">--</span></h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tanggal</h5>
+                                    <h1><span id="TANGGAL">--</span></h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Lampu</h5>
+                                    <h1><span id="lampu"><span id="status">OFF</span></h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about section" id="about">
+            <div class="container">
+                <div class="about-grid"></div>
+                <div class="about-info">
+                    <h3 class="sub-heading">About Device</h3>
+                    <h1 class="heading2">
+                        Smart Light<br /> Control
+                    </h1>
+                    <p class="text">
+                        Lampu otomatis ini diatur sesuai dengan kemauan dari pengguna yang bertujuan untuk memudahkan pengguna dalam mengatur nyala atau mati pada lampu. Pengguna dapat mengatur nyala lampu pada waktu tertentu dan lampu mati pada waktu tertentu.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="./img/lampu.png" class="logo" alt="hmtt" />
+                </div>
+                <div class="button-onoff">
+                    <label class="switch">
+              <input type="checkbox" checked />
+              <span class="slider"></span>
+            </label>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="contact section">
+        <div class="container" id="weat">
+            <div class="row mt-5">
+                <div class="col">
+                    <strong>Check the Weather</strong>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-md-9">
+                    <div class="input-group mb-5">
+                        <input type="text" class="form-control input-keyword" placeholder="Enter City's or Country's Name" aria-label="Recipient's username" aria-describedby="button-addon2" />
+                        <button class="btn" type="button" id="button-addon2">
+                Search
+              </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container mt-5 result"></div>
+
+    <div class="container" id="pf">
+        <h3 class="sub-heading">OUR TEAMS</h3>
+        <h1 class="heading2">
+            Our<br /> Teams
+        </h1>
+        <main class="grid">
+            <article>
+                <img src="img/helmi.JPG" width="250px" height="250px" />
+                <div class="konten">
+                    <strong>Helmi Falah Hidayat</strong>
+                    <p>TT-44-01</p>
+                    <p>S1 Teknik Telekomunikasi</p>
+                </div>
+            </article>
+            <article>
+                <img src="img\fikri.JPG" width="250px" height="250px" />
+                <div class="konten">
+                    <strong>Muhammad Fikri Pratama</strong>
+                    <p>TT-44-06</p>
+                    <p>S1 Teknik Telekomunikasi</p>
+                </div>
+            </article>
+            <article>
+                <img src="img\mahen.jpg" width="250px" height="250px" />
+                <div class="konten">
+                    <strong>Mahendra Adi Rahmawan</strong>
+                    <p>TT-44-01</p>
+                    <p>S1 Teknik Telekomunikasi</p>
+                </div>
+            </article>
+            <article>
+                <img src="img\difa.jpeg" width="250px" height="250px" />
+                <div class="konten">
+                    <strong>Difa Putri Chairunisa</strong>
+                    <p>TT-44-09</p>
+                    <p>S1 Teknik Telekomunikasi</p>
+                </div>
+            </article>
+        </main>
+    </div>
+
+
+    <script src="darktheme.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
